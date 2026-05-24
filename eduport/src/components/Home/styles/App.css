@@ -1,0 +1,91 @@
+/* ============================================================
+   GLOBAL VARIABLES & RESET
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary:        #0d6efd;
+  --primary-dark:   #0a58ca;
+  --primary-light:  #e8f0fe;
+  --accent:         #ff6636;
+  --success:        #198754;
+  --bg-light:       #f8f9fa;
+  --bg-section:     #f5f7fb;
+  --text-dark:      #1d2026;
+  --text-muted:     #6c757d;
+  --border:         #e5e7eb;
+  --card-shadow:    0 4px 24px rgba(0, 0, 0, 0.08);
+  --card-radius:    12px;
+  --font-main:      'Nunito', sans-serif;
+  --font-heading:   'Manrope', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background: #fff;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   SHARED BUTTON STYLES
+   ============================================================ */
+.btn-primary-edu {
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn-primary-edu:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
+}
+
+.btn-outline-primary-edu {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.btn-outline-primary-edu:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Star ratings shared */
+.star { color: #ddd; font-size: 0.9rem; }
+.star.filled { color: #f7a416; }
+
+.stars-sm .star { font-size: 0.8rem; }

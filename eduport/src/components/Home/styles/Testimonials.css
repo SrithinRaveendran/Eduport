@@ -1,0 +1,148 @@
+/* ============================================================
+   TESTIMONIALS SECTION
+   ============================================================ */
+
+.testimonials-section {
+  padding: 80px 0;
+  background: var(--bg-section);
+}
+
+/* --- Testimonial Card --- */
+.testimonial-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 36px 36px 28px;
+  position: relative;
+}
+
+.quote-icon {
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.15;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  pointer-events: none;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.reviewer-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-light);
+}
+
+.reviewer-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Dot navigation */
+.testimonial-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: var(--primary);
+  transform: scale(1.25);
+}
+
+/* --- Mentors Panel --- */
+.mentors-panel {
+  padding: 10px 0;
+}
+
+.mentors-heading {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.mentors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.mentor-row {
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.mentor-row:hover {
+  transform: translateX(4px);
+}
+
+.mentor-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-light);
+}
+
+.mentor-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.mentor-role {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Rating summary */
+.rating-summary {
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: inline-block;
+}
+
+.big-rating {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.rating-base {
+  font-size: 0.82rem;
+}

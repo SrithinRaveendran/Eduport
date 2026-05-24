@@ -1,0 +1,94 @@
+/* ============================================================
+   NAVBAR STYLES
+   ============================================================ */
+
+.eduport-navbar {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  background: #fff !important;
+  z-index: 1000;
+}
+
+.eduport-navbar .navbar-brand img {
+  transition: opacity 0.2s;
+}
+
+.eduport-navbar .navbar-brand:hover img {
+  opacity: 0.85;
+}
+
+/* Nav links */
+.eduport-navbar .nav-link,
+.eduport-navbar .dropdown-toggle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark) !important;
+  padding: 8px 14px !important;
+  transition: color 0.2s;
+}
+
+.eduport-navbar .nav-link:hover,
+.eduport-navbar .dropdown-toggle:hover {
+  color: var(--primary) !important;
+}
+
+/* Dropdown menu */
+.eduport-navbar .dropdown-menu {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  min-width: 200px;
+  animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.eduport-navbar .dropdown-item {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.eduport-navbar .dropdown-item:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Right side text link */
+.nav-link-text {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-dark) !important;
+  transition: color 0.2s;
+}
+
+.nav-link-text:hover {
+  color: var(--primary) !important;
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+  .eduport-navbar .navbar-collapse {
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
+  }
+
+  .eduport-navbar .nav-link,
+  .eduport-navbar .dropdown-toggle {
+    padding: 10px 8px !important;
+  }
+
+  .eduport-navbar .dropdown-menu {
+    box-shadow: none;
+    border: 1px solid var(--border);
+  }
+}
