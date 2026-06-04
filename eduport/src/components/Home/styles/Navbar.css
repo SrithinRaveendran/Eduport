@@ -2,6 +2,19 @@
    NAVBAR STYLES
    ============================================================ */
 
+
+   .borderr{
+    border:solid 2px black;
+   }
+   /* .pro-name{
+    padding:0% ;
+    margin:0%;
+   } */
+
+   .pro-card{
+    display: flex;
+    align-items: center;
+   }
 .eduport-navbar {
   padding: 16px 0;
   border-bottom: 1px solid var(--border);

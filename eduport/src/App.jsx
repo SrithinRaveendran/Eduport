@@ -14,12 +14,30 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 
 import Home from './components/Home/Home';
+import DetailPage from './components/Detail-page/DetailPage';
+import Register from './components/Register/Register'
+import SignInPage from './components/Login/SignInPage'
+import BecomeInstructor from './components/becomeInstructor/BecomeInstructor';
+import ProtectedRoute from './components/ProtectedRoute';
+
 function App() {
   return (
     <BrowserRouter>
+    <Routes>
+      <Route path="/register" element={<Register/>}/>
+        <Route path="/login" element={<SignInPage/>} />
+    </Routes>
+    
+    <ProtectedRoute>
       <Routes>
+       
         <Route path='/' element={<Home />} />
+        <Route path='/Detail-page/:id' element={<DetailPage />} />
+        
+        <Route path="/becomeInstructor" element={<BecomeInstructor/>} />
+        
       </Routes>
+      </ProtectedRoute>
     </BrowserRouter>
   );
 }

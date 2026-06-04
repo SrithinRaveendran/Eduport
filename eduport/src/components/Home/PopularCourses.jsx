@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
+import { Container, Row, Col, Nav, Tab } from 'react-bootstrap';
 import './styles/PopularCourses.css';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { tabchange } from '../../redux-toolkit/tabSlice';
+import { useDispatch } from 'react-redux';
 
 const BASE = 'https://stackbros.in/eduport/landing/assets/images/courses/4by3/';
 
@@ -40,14 +44,16 @@ function StarRating({ rating }) {
 }
 
 function CourseCard({ course }) {
-
-
+  const navigate = useNavigate()
+  const onCardclick = () => {
+    navigate(`/Detail-page/${course._id}`)
+  }
   return (
     <Col md={6} lg={4} className="mb-4">
-      <div className="course-card">
+      <div className="course-card" onClick={onCardclick}>
         <div className="course-img-wrap">
-          {console.log(course)}
-          <img src={course.imgae} alt={course.title} className="course-img" />
+          {/* {console.log(course)} */}
+          <img src={course.image} alt={course.title} className="course-img" />
           <span className={`level-badge ${course.level.toLowerCase().replace(' ', '-')}`}>{course.level}</span>
         </div>
         <div className="course-body">
@@ -67,43 +73,42 @@ function CourseCard({ course }) {
   );
 }
 
-export default function PopularCourses() {
-
-   const [ALL_COURSES, setAllCourses] = useState([])
-
-  const CourseDataAPi = async () => {
-    
-    try {
-      const data = await axios.get("http://localhost:5000/course")
-      await console.log(data.data)
-      await setAllCourses(data.data)
-    } catch (e) {
-      console.log(e.message)
-    }
+export default function PopularCourses(props) {
+  const { ALL_COURSES } = props
+  // console.log(ALL_COURSES)
+  const selectedtab = useSelector((state) => state.tab.tab)
+  // console.log(selectedtab, 'selectedtabfromredux')
+  // console.log('verthea oru log')
+useEffect(()=>{
+},[selectedtab])
 
 
+  const [activeTab, setActiveTab] = useState(selectedtab);
+  
+  const dispatch=useDispatch()
+
+  const activeTabset=(tab)=>{
+    dispatch(tabchange(tab))
+    setActiveTab(tab)  
   }
 
-  useEffect(() => {
-    CourseDataAPi()
-  }, [])
-
-
-  const [activeTab, setActiveTab] = useState('All');
-
-  const filtered = activeTab === 'All'
+  const filtered =  activeTab === 'All'
     ? ALL_COURSES
     : ALL_COURSES.filter(c =>
-      activeTab === 'Web Design' ? c.cat === 'Design' :
-        activeTab === 'Graphic Design' ? c.cat === 'Design' :
-          c.cat === activeTab
+       activeTab === 'Web Design' ? c.category === 'Web Design' :
+        activeTab === 'Graphic Design' ? c.category === 'Graphic Design' :
+          activeTab === 'Development' ? c.category === 'Development' :
+            activeTab === 'Marketing' ? c.category === 'Marketing' :
+              activeTab === 'Finance' ? c.category === 'Finance' :
+                c.category === activeTab
     );
 
   return (
-    <section className="popular-courses-section">
+    <section className="popular-courses-section" id='popular-courses'>
       <Container>
         <div className="section-header text-center mb-5">
-          <h2 className="section-title">Most Popular Courses</h2>
+
+          <h2 className="section-title" >Most Popular Courses</h2>
           <p className="section-sub">Choose from hundreds of courses from specialist organizations</p>
         </div>
 
@@ -113,7 +118,7 @@ export default function PopularCourses() {
             <Nav.Item key={tab}>
               <button
                 className={`course-tab-btn ${activeTab === tab ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab)}
+                onClick={() => activeTabset(tab)}
               >
                 {tab}
               </button>
@@ -122,12 +127,10 @@ export default function PopularCourses() {
         </Nav>
 
         <Row>
-          {ALL_COURSES.map(each=>(<CourseCard key={each._id} course={each}/>))}
-
-          {/* <CourseCard key={course.id} course={ALL_COURSES} /> */}
-          {/* {filtered.slice(0, 6).map((course) => (
-            <CourseCard key={course.id} course={course} />
-         ))} */}
+         
+          {filtered.slice(0, 6).map((each) => (
+            <CourseCard key={each.id} course={each} />
+          ))}
         </Row>
 
         <div className="text-center mt-3">

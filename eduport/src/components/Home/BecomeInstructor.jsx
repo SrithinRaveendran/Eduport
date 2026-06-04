@@ -1,8 +1,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './styles/BecomeInstructor.css';
 
+
 export default function BecomeInstructor() {
+  const Navigate = useNavigate()
+  const onTeachClick=()=>{
+    Navigate("/becomeInstructor")
+  }
   return (
     <section className="become-instructor-section">
       <Container>
@@ -14,7 +20,7 @@ export default function BecomeInstructor() {
               Speedily say has suitable disposal add boy. On forth doubt miles of child.
               Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished.
             </p>
-            <a href="#" className="btn btn-primary-edu btn-lg rounded-pill px-5 mt-2">
+            <a onClick={()=>onTeachClick()} className="btn btn-primary-edu btn-lg rounded-pill px-5 mt-2">
               Start Teaching Today
             </a>
           </Col>

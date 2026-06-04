@@ -57,17 +57,17 @@ export default function Footer() {
             <h6 className="footer-heading">Contact</h6>
             <p className="footer-contact">
               Toll free: <strong>+1234 568 963</strong><br />
-              <span className="text-muted small">(9:AM to 8:PM IST)</span>
+              <span  style={{color:"White"}}>(9:AM to 8:PM IST)</span>
             </p>
             <p className="footer-contact">
               Email: <strong>example@gmail.com</strong>
             </p>
 
             {/* App store buttons */}
-            <div className="app-buttons d-flex flex-column gap-2 mt-3">
+            {/* <div className="app-buttons d-flex flex-column gap-2 mt-3">
               <a href="#"><img src={GOOGLE_PLAY} alt="Google Play" height="36" /></a>
               <a href="#"><img src={APP_STORE} alt="App Store" height="36" /></a>
-            </div>
+            </div> */}
           </Col>
         </Row>
 
@@ -75,10 +75,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="footer-bottom d-flex flex-wrap align-items-center justify-content-between gap-3">
-          <p className="mb-0 text-muted small">
+          {/* <p className="mb-0 text-muted small">
             Copyrights ©2024 Eduport. Build by{' '}
             <a href="https://www.stackbros.in/" className="footer-brand-link">StackBros</a>
-          </p>
+          </p> */}
           <div className="footer-bottom-links d-flex gap-4">
             <a href="#" className="footer-link small">Terms of use</a>
             <a href="#" className="footer-link small">Privacy policy</a>
