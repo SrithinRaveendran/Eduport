@@ -10,9 +10,9 @@ const avatars = [
 ];
 
 const techIcons = [
-  { src: 'https://stackbros.in/eduport/landing/assets/images/client/science.svg', alt: 'Science' },
-  { src: 'https://stackbros.in/eduport/landing/assets/images/client/angular.svg', alt: 'Angular' },
-  { src: 'https://stackbros.in/eduport/landing/assets/images/client/figma.svg', alt: 'Figma' },
+  { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png', alt: 'React' },
+  { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMqzMqxo3FdmgI207Z1QuXm6ndnJxp7QGm_g&s', alt: 'Angular' },
+  { src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS62LVhts8-ERiNmlrfHQShVXasUYH38KKSRw&s', alt: 'Figma' },
 ];
 
 export default function Hero() {
@@ -64,7 +64,7 @@ export default function Hero() {
           <Col lg={6} className="hero-image-col position-relative">
 
             {/* Congratulations Card */}
-            <div className="hero-card congrats-card">
+            {/* <div className="hero-card congrats-card">
               <div className="d-flex align-items-center gap-2">
                 <span className="congrats-icon">🎓</span>
                 <div>
@@ -72,7 +72,7 @@ export default function Hero() {
                   <div className="congrats-sub">Your admission completed</div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Daily Students Card */}
             <div className="hero-card students-card">
@@ -93,7 +93,7 @@ export default function Hero() {
             {/* Hero illustration placeholder */}
             <div className="hero-illustration">
               <img
-                src="https://stackbros.in/eduport/landing/assets/images/element/07.png"
+                src="/undraw_business-plan_zrf7.svg"
                 alt="Learning illustration"
                 className="hero-img"
               />
