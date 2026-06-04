@@ -73,7 +73,7 @@ export default function Register() {
     setTimeout(() => { setLoading(false); setSuccess(true); }, 1600);
 
     try{
-      const registerapi = await axios.post("http://localhost:5000/register",form)
+      const registerapi = await axios.post("https://eduport-sty7.onrender.com/register",form)
       
       
     }
@@ -132,7 +132,7 @@ export default function Register() {
       {/* ── RIGHT PANEL ── */}
       <div className="auth-right">
         <div className="auth-right__top">
-          Already have an account? <a href="#">Sign in</a>
+          Already have an account? <a href="/login">Sign in</a>
         </div>
 
         <div className="auth-form-wrap">

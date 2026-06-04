@@ -18,7 +18,7 @@ function Home() {
   const CourseDataAPi = async () => {
     
     try {
-      const data = await axios.get("http://localhost:5000/course")
+      const data = await axios.get("https://eduport-sty7.onrender.com/course")
       await console.log(data.data)
       await setAllCourses(data.data)
     } catch (e) {

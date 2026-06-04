@@ -28,7 +28,7 @@ export default function DetailPage() {
 
   const getsingleItem = async () => {
     try {
-      const singleItem = await axios.get(`http://localhost:5000/course/${id}`)
+      const singleItem = await axios.get(`https://eduport-sty7.onrender.com/course/${id}`)
       console.log(singleItem, 'data from api')
       console.log(singleItem.data.curriculum,"curriculam data only");
       console.log(singleItem.data.whatYouWillLearn,"what you will learn")
@@ -50,7 +50,7 @@ export default function DetailPage() {
   const getAllcourse = async ()=>{
     try{
       console.log("API called");
-    const allcourses = await axios.get("http://localhost:5000/course")
+    const allcourses = await axios.get("https://eduport-sty7.onrender.com/course")
     const data = allcourses.data
     setFullcourses(data)
     console.log(data,"data from detailpage full courses")

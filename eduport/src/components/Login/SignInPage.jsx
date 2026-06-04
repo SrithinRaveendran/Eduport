@@ -93,7 +93,7 @@ export default function SignInPage() {
     // setLoading(true);
     // setTimeout(() => { setLoading(false); setSuccess(true); }, 1600);
     try{
-      const loginapi =  await axios.post("http://localhost:5000/login", form)
+      const loginapi =  await axios.post("https://eduport-sty7.onrender.com/login", form)
       await localStorage.setItem("token",loginapi.data.token)
       console.log(loginapi)
       navigate("/")
@@ -112,7 +112,7 @@ export default function SignInPage() {
         <div className="signin-left__top">
           <div className="signin-logo">Edu<span>port</span></div>
           <span className="signin-left__top-link">
-            No account? <a href="#">Sign up free</a>
+            No account? <a href="/register">Sign up free</a>
           </span>
         </div>
 
@@ -135,18 +135,18 @@ export default function SignInPage() {
               <div className="signin-form__eyebrow">Welcome back</div>
               <h1 className="signin-form__title">Sign in to Eduport</h1>
               <p className="signin-form__subtitle">
-                Don't have an account? <a href="#">Create one free</a>
+                Don't have an account? <a href="/register">Create one free</a>
               </p>
 
               {/* Social buttons */}
-              <div className="social-row">
+              {/* <div className="social-row">
                 <button className="social-btn-card" type="button">
                   <IconGoogle /> Continue with Google
                 </button>
                 <button className="social-btn-card" type="button">
                   <IconFacebook /> Continue with Facebook
                 </button>
-              </div>
+              </div> */}
 
               <div className="form-divider">or sign in with email</div>
 
