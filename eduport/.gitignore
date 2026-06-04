@@ -1,2 +1,4 @@
 node_modules/
 dist/
+eduport/node_modules/
+eduport/dist/
