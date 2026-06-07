@@ -9,7 +9,7 @@ import { CgProfile } from "react-icons/cg";
 import { useNavigate } from 'react-router-dom';
 
 
-const LOGO = 'https://stackbros.in/eduport/landing/assets/images/logo.svg';
+const LOGO = 'https://eduport.app/wp-content/uploads/2024/09/Eduport-Logo1.svg.png';
 
 export default function Navbar() {
   const [expanded, setExpanded] = useState(false);
@@ -23,7 +23,7 @@ export default function Navbar() {
   const navigate = useNavigate()
 
   const onDropdownClick = (event)=>{
-  //  console.log(event)
+   console.log(event)
    dispatch(tabchange(event))
   }
 

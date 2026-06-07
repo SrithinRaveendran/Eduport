@@ -76,20 +76,20 @@ function CourseCard({ course }) {
 export default function PopularCourses(props) {
   const { ALL_COURSES } = props
   // console.log(ALL_COURSES)
-  const selectedtab = useSelector((state) => state.tab.tab)
+  const activeTab = useSelector((state) => state.tab.tab)
   // console.log(selectedtab, 'selectedtabfromredux')
   // console.log('verthea oru log')
-useEffect(()=>{
-},[selectedtab])
+// useEffect(()=>{
+// },[activeTab])
 
 
-  const [activeTab, setActiveTab] = useState(selectedtab);
+  // const [activeTab, setActiveTab] = useState(selectedtab);
   
   const dispatch=useDispatch()
 
   const activeTabset=(tab)=>{
     dispatch(tabchange(tab))
-    setActiveTab(tab)  
+    // setActiveTab(tab)  
   }
 
   const filtered =  activeTab === 'All'

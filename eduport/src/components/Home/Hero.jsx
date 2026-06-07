@@ -75,7 +75,7 @@ export default function Hero() {
             </div> */}
 
             {/* Daily Students Card */}
-            <div className="hero-card students-card">
+            {/* <div className="hero-card students-card">
               <div className="students-label">Our daily new students</div>
               <div className="d-flex align-items-center gap-1 mt-2">
                 {avatars.map((src, i) => (
@@ -88,7 +88,7 @@ export default function Hero() {
                 ))}
                 <span className="students-count">1K+</span>
               </div>
-            </div>
+            </div> */}
 
             {/* Hero illustration placeholder */}
             <div className="hero-illustration">
